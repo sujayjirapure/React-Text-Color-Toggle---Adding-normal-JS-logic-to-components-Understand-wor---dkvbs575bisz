@@ -2,23 +2,22 @@ import React, {useEffect, useState} from 'react'
 import '../styles/App.css';
 
 const App = () => {
-  const [Show ,setShow] = useState(false);
-
-  const clickfunc = () => {
-    setShow(!Show);
+//code here 
+const [color, setColor] = useState('redColor');
+  const toggle =()=>{
+    if(color === 'redColor'){
+      setColor('blueColor')
+    }
+    else{
+      setColor('redColor')
+    }
   }
-
   return (
     <div id="main">
-      {Show ?
-      <p className="redColor">Newton School</p>
-      :
-      <p className="blueColor">Newton School</p>
-      }
-      <button id='button' onClick={clickfunc}>Change Style</button>
+      <p className={color} >Newton School</p>
+      <button id='button' onClick={toggle}>Change Style</button>
     </div>
-  );
-};
-
+  )
+}
 
 export default App;
